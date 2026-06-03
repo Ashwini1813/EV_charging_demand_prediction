@@ -32,15 +32,37 @@ st.markdown("""
 # Display image after config and styles
 # Stylized title using markdown + HTML
 st.markdown("""
-    <div style='text-align: center; font-size: 36px; font-weight: bold; color: #FFFFFF; margin-top: 20px;'>
-        🔮 EV Adoption Forecaster for a County in Washington State
+    <div style='
+        text-align: center; 
+        font-size: 42px; 
+        font-weight: 800; 
+        color: #00d4ff;
+        letter-spacing: 2px;
+        text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        margin-top: 20px;
+        font-family: "Segoe UI", sans-serif;
+    '>
+        ⚡ EV Adoption Forecaster
     </div>
-""", unsafe_allow_html=True)
-
-# Welcome subtitle
-st.markdown("""
-    <div style='text-align: center; font-size: 22px; font-weight: bold; padding-top: 10px; margin-bottom: 25px; color: #FFFFFF;'>
-        Welcome to the Electric Vehicle (EV) Adoption Forecast tool.
+    <div style='
+        text-align: center;
+        font-size: 16px;
+        color: #a0b4c8;
+        letter-spacing: 4px;
+        margin-top: 8px;
+        font-family: "Segoe UI", sans-serif;
+    '>
+        WASHINGTON STATE — PREDICTIVE ANALYTICS DASHBOARD
+    </div>
+    <div style='
+        text-align: center;
+        font-size: 16px;
+        color: #a0b4c8;
+        margin-top: 15px;
+        margin-bottom: 30px;
+        font-family: "Segoe UI", sans-serif;
+    '>
+        Select a county to explore historical trends and 3-year EV adoption forecast
     </div>
 """, unsafe_allow_html=True)
 
@@ -140,9 +162,17 @@ ax.set_title(f"Cumulative EV Trend - {county} (3 Years Forecast)", fontsize=14, 
 ax.set_xlabel("Date", color='white')
 ax.set_ylabel("Cumulative EV Count", color='white')
 ax.grid(True, alpha=0.3)
-ax.set_facecolor("#1c1c1c")
-fig.patch.set_facecolor('#1c1c1c')
-ax.tick_params(colors='white')
+ax.set_facecolor("#0d1117")
+fig.patch.set_facecolor('#0d1117')
+ax.tick_params(colors='#00d4ff')
+ax.xaxis.label.set_color('#a0b4c8')
+ax.yaxis.label.set_color('#a0b4c8')
+ax.title.set_color('#00d4ff')
+ax.spines['bottom'].set_color('#1e3a5f')
+ax.spines['left'].set_color('#1e3a5f')
+ax.spines['top'].set_color('#0d1117')
+ax.spines['right'].set_color('#0d1117')
+ax.grid(True, alpha=0.15, color='#00d4ff')
 ax.legend()
 st.pyplot(fig)
 
@@ -239,9 +269,17 @@ if multi_counties:
     ax.set_xlabel("Date", color='white')
     ax.set_ylabel("Cumulative EV Count", color='white')
     ax.grid(True, alpha=0.3)
-    ax.set_facecolor("#183480")
-    fig.patch.set_facecolor("#181818")
-    ax.tick_params(colors='white')
+    ax.set_facecolor("#0d1117")
+    fig.patch.set_facecolor('#0d1117')
+    ax.tick_params(colors='#00d4ff')
+    ax.xaxis.label.set_color('#a0b4c8')
+    ax.yaxis.label.set_color('#a0b4c8')
+    ax.title.set_color('#00d4ff')
+    ax.spines['bottom'].set_color('#1e3a5f')
+    ax.spines['left'].set_color('#1e3a5f')
+    ax.spines['top'].set_color('#0d1117')
+    ax.spines['right'].set_color('#0d1117')
+    ax.grid(True, alpha=0.15, color='#00d4ff')
     ax.legend(title="County")
     st.pyplot(fig)
     
@@ -272,4 +310,17 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown("Prepared for the **AICTE Internship Cycle 2 by S4F**")
+st.markdown("""
+<div style='
+    text-align: center;
+    font-size: 14px;
+    color: #a0b4c8;
+    letter-spacing: 2px;
+    margin-top: 30px;
+    padding: 15px;
+    border-top: 1px solid #1e3a5f;
+    font-family: "Segoe UI", sans-serif;
+'>
+    ⚡ Developed by <b style="color:#00d4ff;">Ashwini Parmar</b> | Data Science Portfolio Project
+</div>
+""", unsafe_allow_html=True)
