@@ -45,7 +45,7 @@ Using historical EV population data and a Random Forest Regression model, the ap
 |--------|-------|
 | MAE | 0.01 |
 | RMSE | 0.06 |
-| R² Score | 1.00 |
+| R² Score | 0.97 |
 
 The model demonstrates excellent predictive performance on the prepared dataset.
 
